@@ -18,6 +18,8 @@ show_sidebar: false #show a sidebar instead of the usual header
 
 navigation:
   - {file: "README.md", icon: address-card}
+  - {title: "CV", ulr: "https://www.youtube.com/watch?v=V2cunxCGc_8&ab_channel=TRYBALS"}
+  - {title: "Blog"}
 
 plugins:
   - jekyll-feed

@@ -1,4 +1,5 @@
 
+
 ############################
 # --- Required options --- #
 ############################
@@ -17,24 +18,6 @@ navbar-links:
   About Me: "aboutme"
 
 
-
-#################################################################################
-# --- You don't need to touch anything below here (but you can if you want) --- #
-#################################################################################
-
-# Output options (more information on Jekyll's site)
-#timezone: "America/Toronto"
-markdown: kramdown
-highlighter: rouge
-permalink: /:year-:month-:day-:title/
-paginate: 5
-
-kramdown:
-  input: GFM
-
-
-plugins:
-  - jekyll-feed
 
 #permalink: /:title/
 lang: "en"
@@ -55,35 +38,5 @@ navigation:
   - {title: "CV", ulr: "https://www.youtube.com/watch?v=V2cunxCGc_8&ab_channel=TRYBALS"}
   - {title: "Blog"}
 
-
-
-
-
-
-###########################
-# --- General options --- #
-###########################
-
-# Add the website title to the title of every page
-title-on-all-pages: true
-
-# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
-excerpt_length: 50
-
-# Whether or not to show an excerpt for every blog post in the feed page
-feed_show_excerpt: true
-
-# Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: true
-
-# Add a search button to the navbar
-post_search: true
-
-# Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
-edit_page_button: true
-
-# Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
-# If this setting is off, then long sub-menu words might get cut off
-# See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
-navbar-var-length: false
-
+plugins:
+  - jekyll-feed

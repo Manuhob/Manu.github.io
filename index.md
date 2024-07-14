@@ -2,7 +2,8 @@
 layout: default
 ---
 
-This is an example of an index pange.
+In this blog I'll add some entries about my very personal journal while learning some Data Science stuff, starting with some fundamental notions of Statistics. 
 
-[First post on Erwartungswert](./Erwartungswert.md)
+
+- The [First post](./Erwartungswert.md) concerns the notions of a random variable, its probability distribution, and the expected value.
 

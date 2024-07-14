@@ -83,3 +83,5 @@ navbar-var-length: false
 ###########################
 
 markdown: kramdown
+mathjax: true
+

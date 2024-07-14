@@ -1,13 +1,13 @@
 # Erwartungswert
 
 ## Abstract
-In this note, we will discuss the concept of a random variable and its expected value. We will follow the format example $\rightarrow$ intuition $\rightarrow$ theory. We finish with an historic example.
+In this note, we will discuss the concept of a random variable and its expected value. We will follow the format example \(\rightarrow\) intuition $\(\rightarrow\) theory. We finish with an historic example.
 
 ## To answer a test at random
 
 In a multiple option question with four options, and choosing the answer at random, we have
--  Probability to guess correctly: $P = 1/4$
--  Probability to guess incorrectly: $P = 3/4$. 
+-  Probability to guess correctly: \(P = 1/4\)
+-  Probability to guess incorrectly: \(P = 3/4\). 
 
 In the next Figure, we chose option (c), but the correct answer was (a)
 
@@ -17,58 +17,58 @@ In the next Figure, we chose option (c), but the correct answer was (a)
 
 In the presence of two questions with four multiple options, in order to guess exactly one question, we must
 
-1. Guess correctly the first and incorrectly the second: $P = (1/4) \times (3/4) = 0.1875$, 
+1. Guess correctly the first and incorrectly the second: \(P = (1/4) \times (3/4) = 0.1875\), 
 
 | Inciso | (a) | (b) | (c) | (d) |
 | --- | ---- | --- | --- | ---|
 | 1.- | o x | | | |
 | 2.- | | o | x | |
 
-2. or guess incorrectly the first and correctly the second: $P = (3/4) \times (1/4) = 0.1875$
+2. or guess incorrectly the first and correctly the second: $\(P = (3/4) \times (1/4) = 0.1875\)
 
 | Inciso | (a) | (b) | (c) | (d) |
 | --- | ---- | --- | --- | ---|
 | 1.- | o | x | | |
 | 2.- | | o x | | |
 
-having the total probability $2 \times (1/4) \times (3/4) = 0.375$ of guessing correctly exactly one question.
+having the total probability \(2 \times (1/4) \times (3/4) = 0.375\) of guessing correctly exactly one question.
 ### Example
 
 In a test with four questions of multiple option (four options each), and each correct exercise is worth 10 points, the probabilities of getting each score are:
 
 | Number of rightly guessed exercises | Score | Probability | 
 | --- | --- | --- |
-| 0 | 0 | $(3/4)^4$ |
-| 1 | 10 | $4 \times (1/4) \times (3/4)^3$ | 
-| 2 | 20 | $6 \times (1/4)^2 \times (3/4)^2$ |
-| 3 | 30 | $4 \times (1/4)^3 \times (3/4)$ |
-| 4 | 40 | $(1/4)^4$ |
+| 0 | 0 | \((3/4)^4$ |
+| 1 | 10 | \(4 \times (1/4) \times (3/4)^3\) | 
+| 2 | 20 | \(6 \times (1/4)^2 \times (3/4)^2\) |
+| 3 | 30 | \(4 \times (1/4)^3 \times (3/4)\) |
+| 4 | 40 | \((1/4)^4\) |
 
 To obtain the **Expected Value**, we multiply each score times the probability of obtaining such score and add everything together. In the previous example, the expected value is:
-$$  \mathbb{E} = 0 + 4.21875 + 4.21875 + 1.40625 + 0.15625 = 10.     $$
+\[  \mathbb{E} = 0 + 4.21875 + 4.21875 + 1.40625 + 0.15625 = 10.     \]
 ### Generalizating the example
-In a more general case, where we have a test with n exercises. If we have a probability $p$ of guessing correctly each exercise ($p = 1/4$ in the previous example), then we have a probability $(1-p)$ of guessing incorrectly each exercise. If we want exactly $k$ correct exercises when guessing at random, we need
-- Possible combinations of right-wrong guessings: ${n \choose k}$, 
-- Probability of ocurrence in each combination: $p^k (1-p)^{n-k}$ .
-So, the probability of guessing exactly $k$ exercises in an $n$-test scenario is ${n \choose k} p^k (1-p)^{n-k}$. The total probability is
-$$ \sum_{k=0}^n {n \choose k} p^k(1-p)^{n-k} = (p + 1-p)^n = 1^n = 1.$$
+In a more general case, where we have a test with n exercises. If we have a probability \(p\) of guessing correctly each exercise (\(p = 1/4\) in the previous example), then we have a probability \((1-p)\) of guessing incorrectly each exercise. If we want exactly \(k\) correct exercises when guessing at random, we need
+- Possible combinations of right-wrong guessings: \({n \choose k}\), 
+- Probability of ocurrence in each combination: \(p^k (1-p)^{n-k}\) .
+So, the probability of guessing exactly \(k\) exercises in an \(n\)-test scenario is \({n \choose k} p^k (1-p)^{n-k}\). The total probability is
+\[ \sum_{k=0}^n {n \choose k} p^k(1-p)^{n-k} = (p + 1-p)^n = 1^n = 1.\]
 This is called a [**Binomial distribution**](https://en.wikipedia.org/wiki/Binomial_distribution).
 
 ## Theoretic description
 
 Here is a summary of the theoretic ingredients to compute the expected value of a random variable, comparing each step with the previous example.
 
-1. **Set of events** $\Omega$. This is the set of possibilities of your random event.  
-	*In the example, an event in $\Omega$ is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises $1)$, $2)$, $4)$ and guessing incorrectly the exercise $3)$.*
+1. **Set of events** \(\Omega\). This is the set of possibilities of your random event.  
+	*In the example, an event in \(\Omega\) is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises \(1)\), \(2)\), \(4)\) and guessing incorrectly the exercise \(3)\).*
 
-2. A **random variable** $X : \Omega \rightarrow \mathbb{R}$, which gives us a numeric value in a finite set $\{x_1,\cdots , x_r\}$, for each event in $\Omega$. It is called a random variable as it cannot be predicted.
+2. A **random variable** \(X : \Omega \rightarrow \mathbb{R}\), which gives us a numeric value in a finite set \(\{x_1,\cdots , x_r\}\), for each event in \(\Omega\). It is called a random variable as it cannot be predicted.
 	*In the example, the random variable $X$ is the score obtained for the corresponding choosing of random answers.*
         
-3. A **probability distribution**, which for each value $x_j$, gives us the probability $0 \leq p_j = P(X = x_j) \leq 1$, of the random variable take the value $x_j$. It must satisfy the condition $\sum_{j = 1}^n p_j = 1$.
+3. A **probability distribution**, which for each value \(x_j\), gives us the probability \(0 \leq p_j = P(X = x_j) \leq 1\), of the random variable take the value \(x_j\). It must satisfy the condition \(\sum_{j = 1}^n p_j = 1\).
 	*In the example, the probability distribution is computed as the probability to obtain certain number of correct answers and follows the binomial distribution.*
         
-4. The **expected value** (sometimes called expectancy or expectation) of the random variable $X$, is computed with the previous ingredients as:
-		$$  \mathbb{E}(X) = \sum_{j = 1}^n x_j p_j.     $$
+4. The **expected value** (sometimes called expectancy or expectation) of the random variable \(X\), is computed with the previous ingredients as:
+		\[  \mathbb{E}(X) = \sum_{j = 1}^n x_j p_j.     \]
 		*In the example, the expected value is 10.*
 
 

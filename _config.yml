@@ -11,7 +11,8 @@ title: Wandering Mathematician
 author: Manuel Sedano Mendoza
 
 
-theme: jekyll-theme-midnight
+#theme: jekyll-theme-midnight
+remote_theme: pages-themes/dinky@v0.2.0
 description: Blog about my errant learning on Statistics, and Data Science stuff.
 
 navbar-links:
@@ -44,6 +45,7 @@ navigation:
 
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 
 

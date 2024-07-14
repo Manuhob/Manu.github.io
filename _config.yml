@@ -17,6 +17,10 @@ description: Blog about my errant learning on Statistics, and Data Science stuff
 navbar-links:
   About Me: "aboutme"
 
+github:
+  is_project_page: false
+
+
 
 
 #permalink: /:title/
@@ -76,6 +80,5 @@ navbar-var-length: false
 #
 #
 
-github:
-  is_project_page: false
+
 

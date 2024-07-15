@@ -1,0 +1,298 @@
+<!doctype html><html lang=en-us><html><head><link rel=stylesheet href=https://ryleealanza.org/sass/main.fd4e9295ddc1db5ea95bf3cc4ecf03cc64c1017f474d9d29cf71bd2315e43931.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css integrity=sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js integrity=sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></head><body><div class=maindiv id=content><header><div class=navdiv><div class=sidebar-l><div><div class=headline><a href=/>Rylee Alanza Lyman</a></div><div><nav><div class=navbutton><a href=/>Home</a></div><div class=navbutton><a href=/research/>Research</a></div><div class=navbutton><a href=/teaching/>Teaching</a></div><div class=navbutton><a href=/alanza/>Other</a></div><div class=navbutton><a href=/posts/>Blog</a></div></nav></div></div></div></div></header><p>In this post, I want to kind of bring together
+the theme of curvature
+and the theme of affine or projective geometry.
+My goal is to introduce the <i>spaces of constant curvature</i>
+as subspaces of Euclidean space
+and explore their symmetries as groups of matrices.</p><div id=table-of-contents role=doc-toc><h2>Table of Contents</h2><div id=text-table-of-contents role=doc-toc><ul><li><a href=#org36196f5>1. The $n$-sphere in \(\mathbb{R}^{n+1}\)</a></li><li><a href=#orgd55e416>2. Euclidean space</a></li><li><a href=#orgfa01115>3. Hyperbolic space</a><ul><li><a href=#orgf4349b6>3.1. A metric on hyperbolic space</a></li></ul></li></ul></div></div><div id=outline-container-org36196f5 class=outline-2><h2 id=org36196f5><span class=section-number-2>1.</span> The $n$-sphere in \(\mathbb{R}^{n+1}\)</h2><div class=outline-text-2 id=text-1><p>Remember our equation for the unit circle?
+\(x^2 + y^2 = 1\)?
+This <i>curve</i> is a $1$-dimensional object living in \(\mathbb{R}^2\),
+affectionately known as \(\mathbb{R}^{1+1}\)
+and we can easily generalize this equation to \(\mathbb{R}^{n+1}\)
+as \(x_1^2 + \cdots + x_{n+1}^2 = 1\).
+This is the $n$-sphere sitting inside \(\mathbb{R}^{n+1}\).
+For, like, precisely two values of \(n\),
+we know what to expect: the unit circle in \(\mathbb{R}^2\)
+and the unit <i>sphere</i> in \(\mathbb{R}^3\).
+It’s a joy to imagine what the unit $n$-sphere
+<i>feels</i> like for other values of \(n\).
+For example, there ought to be a $0$-sphere in \(\mathbb{R}^{0+1}\),
+and indeed there is:
+the two points \(x\) such that \(x^2 = 1\).
+Or the $3$-sphere,
+which is somehow like and unlike $3$-dimensional space.</p><p>If you’ll permit me an aside,
+here is my favorite way to think of the $3$-sphere;
+actually it works for \(n\) arbitrary, but for \(3\) I can really picture something
+if I wrack my brain a little.
+Let’s go back to the circle:
+pick a point on the circle, like say the point \((0,1)\),
+and throw it away.
+What you’re left with, if you kind of sit with it for a moment,
+is kind of like an <i>open interval</i> in \(\mathbb{R}\), just curled up funny.
+Actually, you can do something pretty neat with these leftover points,
+called <i>stereographic projection.</i>
+Imagine you’re a little surveyor standing
+at the point \((0,1)\) in \(\mathbb{R}^2\),
+and for each other point \((p,q)\) on the circle,
+it’s your job to first draw the straight line from \((0,1)\) to \((p,q)\),
+and then second, note down <i>where</i> that line hits the $x$-axis.</p><figure><img src=/img/curvature/stereographic.jpeg></figure><p>An equation for an arbitrary point on this line is \((tp, tq + (1 - t))\),
+so the point \((x,0)\) on the line will be such that
+\(x = tp\) and \(tq + (1 - t) = 0\).
+This latter equation implies that \(t = \frac{1}{1 - q}\),
+so \(x = \frac{p}{1 - q}\).</p><p>In \(n\) dimensions, the equation for the line becomes \((tx_1,\ldots,tx_n,tx_{n+1} + (1 - t))\),
+and the point on the hyperplane
+\(x_{n+1} = 0\) is \((\frac{x_1}{1 - x_{n+1}},\ldots,\frac{x_n}{1 - x_{n+1}},0)\).</p><p>Anyway, it's clear that you can reverse this process:
+for <i>any</i> point \(\vec p\) on the hyperplane \(x_{n+1} = 0\),
+there is a <i>unique</i> point \(\vec q\) on the unit $n$-sphere such that stereographic projection
+from \((\vec 0, 1)\) through \(\vec q\) yields \(\vec p\).
+As the point \(\vec q\) gets closer and closer to \((0,1)\), the point \(\vec p\)
+goes “off to infinity”.
+Thus, one way to think of the $n$-sphere is like $n$-dimensional space
+with one extra point at infinity that “wraps it all up”.
+Like, the circle is the real line \(\mathbb{R}\) wrapped up with one extra point,
+the sphere is the plane wrapped up with one extra point… and \(S^3\),
+the $3$-sphere,
+is \(\mathbb{R}^3\) wrapped up with one extra point. Neat, huh?</p><p>Anyway, consider a linear transformation of \(\mathbb{R}^{n+1}\).
+There are <i>many</i> such,
+and <i>all</i> of them may be represented by \((n+1)\times(n+1)\) matrices!
+The action of the transformation on \(\mathbb{R}^{n+1}\) is matrix multiplication.
+I mean, the point of this post is we all love linear algebra, right?
+Anyway, suppose we want two things to happen:
+first, our transformation (or equivalently our matrix \(M\))
+should be <i>invertible</i>
+in the sense that we can <i>undo</i> it.
+In terms of the matrix, this means that there exists a matrix \(M^{-1}\)
+such that \(MM^{-1} = M^{-1}M = I\), the identity matrix.
+If you remember linear algebra,
+you might know that this comes down to a condition on the <i>determinant</i> of \(M\):
+that determinant must not be \(0\).</p><p>The other thing we want to have happen is that the matrix preserves the unit sphere.
+But the equation \(x_1^2 + \cdots + x_{n+1}^2 = 1\)
+has a <i>vector</i> interpretation:
+if \(\vec x = (x_1,\ldots,x_n)\),
+we have that the coordinates of \(\vec x\) satisfy the equation for the unit sphere
+if and only if the <i>dot product</i> \(\vec x \cdot \vec x = x_1^2 + \cdots + x_{n+1}^2\) is \(1\).
+This dot product may also be expressed as a matrix product
+\(\vec x^T \vec x = 1\),
+where we think of \(\vec x\) as a <i>column</i> vector
+and \(\vec x^T\), its transpose, as the corresponding <i>row</i> vector.
+Sneakily, we can put in <i>any</i> \((n+1)\times(n+1)\) matrix between \(\vec x^T\) and \(\vec x\)
+and we’ll end up with a number.
+To make sure we end up with the same number,
+let’s just put \(I\), the identity matrix
+\(\begin{pmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1
+\end{pmatrix}\) there.</p><p>Anyway, we want
+\(M\vec x \cdot M \vec x = {(M \vec x)}^T M\vec x = \vec x^T M^TIM \vec x
+= \vec x^T \vec x = 1\).
+This turns out to happen just when \(M^TM = I\).
+Actually this <i>implies</i> that \(M\) is invertible,
+and furthermore that \(MM^T = I\) as well,
+so that \(M^T\) is actually <i>the</i> inverse of \(M\).</p><p>Let’s suppose we’re working with the unit circle in \(\mathbb{R}^2\)
+and that we have a symmetry \(M\) which sends the point \((1,0)\) to \((p,q)\).
+Recall that this actually means that the first column of \(M\) is \((p,q)\)!
+Since we need \(M^TM = I\),
+if the other column of \(M\) is \((c,d)\), we compute</p><p>\(M^TM = \begin{pmatrix}p & q \\c & d\end{pmatrix}\cdot\begin{pmatrix}p & c \\q & d\end{pmatrix}
+= \begin{pmatrix}
+p^2 + q^2 & pc + qd \\
+cp + dq & c^2 + d^2
+\end{pmatrix}
+= \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}\)</p><p>Since \(p^2 + q^2 = 1\), one of \(p\) or \(q\) is nonzero,
+so we can divide by it to see that
+(supposing it is \(p\))
+\(c = -\frac{qd}{p}\).
+Then \(c^2 + d^2 = 1\) implies \(\frac{q^2d^2}{p^2} + d^2 = 1\),
+so (doing some tricksy algebra)
+\(d^2 = p^2\).
+So either \(d = p\), in which case \(c = -q\),
+or \(d = -p\), in which case \(d = q\).
+That is, there are exactly two choices for \(M\),
+\(\begin{pmatrix}p & -q \\ q & p\end{pmatrix}\) and \(\begin{pmatrix}p & q \\ q & -p\end{pmatrix}\).
+These are distinguished by the <i>sign of their determinant</i>
+or equivalently by whether they “preserve or reverse orientation”,
+meaning that one of them is more like a rotation,
+while the other is a rotation followed by a flip.</p><p>Notice as well that if a matrix \(M\) preserves the $n$-sphere in \(\mathbb{R}^{n+1}\),
+it actually preserves the set of points satisfying \(x_1^2 + \cdots + x_{n+1}^2 = r^2\)
+for all \(r\)!</p><p>We can think of the $n$-sphere, \(S^n\)
+as a <i>metric space</i> in two ways.
+The first is to restrict the metric from Euclidean space to the sphere.
+This works fine, but is a little weird:
+the distance then on the circle from \((0,1)\) to \((1,0)\), say, is \(\sqrt{2}\),
+but the actual <i>shortest path on the circle</i> from \((0,1)\) to \((1,0)\)
+is <i>longer;</i> in fact it has length equal to the <i>arc length</i>
+of the curve tracing out the part of the circle from \((0,1)\) to \((1,0)\).
+Since we “know” that the perimeter of a circle is \(2\pi\) times its radius
+and this curve is a quarter of that circle,
+we should expect the distance between \((0,1)\) and \((1,0)\) to be \(\frac{pi}{2}\).</p><p>This latter distance, measuring the <i>angle</i> between \(\vec p\) and \(\vec q\),
+is connected to their <i>dot product.</i>
+For the unit sphere in \(\mathbb{R}^{n+1}\), we have
+that this angle \(\theta\)
+satisfies \(\vec p \cdot \vec q = \cos\theta\).
+(In general one has to account for the <i>norms</i> of \(\vec p\) and \(\vec q\).)
+Anyway, this distance
+\(d(\vec p, \vec q) = \arccos(\vec p \cdot \vec q)\),
+is called the <i>round metric</i> on the unit $n$-sphere in \(\mathbb{R}^{n+1}\).
+With respect to this metric,
+the embedding of \(S^n\) into \(\mathbb{R}^{n+1}\) is an <i>isometric</i> embedding,
+and by our earlier calculations of curvature,
+we see that \(S^n\) equipped with this metric has <i>constant sectional curvature \(1\).</i></p></div></div><div id=outline-container-orgd55e416 class=outline-2><h2 id=orgd55e416><span class=section-number-2>2.</span> Euclidean space</h2><div class=outline-text-2 id=text-2><p>As we've seen in previous posts,
+there is a useful way of thinking of affine subspaces of \(\mathbb{R}^n\)
+as <i>linear</i> subspaces of \(\mathbb{R}^{n+1}\),
+namely if \(p_1,\ldots,p_k\) are affinely independent points in \(\mathbb{R}^n\),
+the subspace that they generate
+may be thought of as the <i>linear</i> subspace of \(\mathbb{R}^{n+1}\)
+spanned by the <i>vectors</i> \(v_1,\ldots,v_k\),
+where \(v_i = (p_i, 1)\).
+That is, \(v_i\) is the vector whose first \(n\) coordinates
+are the coordinates of the point \(p_i\)
+and whose last coordinate is \(1\).
+One reason for setting the last coordinate to something nonzero
+is that if one of the \(p_i\) is the origin,
+thinking of it as a vector is unproductive:
+the zero vector is never part of a linearly independent set.</p><p>Thus the line in \(\mathbb{R}^2\) through the points \((3,7)\) and \((4,5)\)
+corresponds to the linear subspace (a plane) in \(\mathbb{R}^3\)
+spanned by the vectors \((3,7,1)\) and \((4,5,1)\).
+(Strictly speaking, we should be careful to think of vectors
+as either row or column vectors,
+but I am assuming here that you don't care either.)
+Indeed, if you look at this plane in \(\mathbb{R}^3\),
+the places where it slices through the plane \(z = 1\) in \(\mathbb{R}^3\)
+forms a line which passes through the given points.</p><p>Consider the (column) vector \(\vec v = (x, y, z)\)
+and a \(3\times3\) matrix \(M\).
+The last coordinate of the matrix \(M\vec v\)
+is the <i>dot product</i> of the last <i>row</i> of \(M\)
+(thought of as a column vector)
+with \(\vec v\).
+In other words, if the last row of \(M\) is \((m_{31}, m_{32}, m_{33})\),
+we have that the last coordinate of \(M\vec v\) is
+\(m_{31}x + m_{32}y + m_{33}z\).</p><p>Suppose that the first two entries, \(x\) and \(y\) of \(\vec v\) are allowed
+to be arbitrary—whatever numbers you want—but that \(z = 1\).
+For \(M\) to preserve this property,
+that is, for \(M\) to send the \(z = 1\) plane in \(\mathbb{R}^3\) to itself,
+we see that we <i>must</i> have \(m_{31} = m_{32} = 0\),
+while \(m_{33} = 1\).
+In other words, we can write \(M\) in <i>block</i> form as
+\(\begin{pmatrix}
+A & \vec w \\
+\vec 0 & 1
+\end{pmatrix}\),
+where \(A\) is a \(2\times2\) matrix,
+\(\vec w\) is a \(2\times 1\) matrix (affectionately known as a column vector),
+\(\vec 0\) is the zero \(1 \times 2\) row vector
+and \(1\) is, well, \(1\).
+Invertible matrices of this form are part of the <i>affine group,</i>
+which is so named because it preserves the affine plane \(z = 1\).
+In fact, for a matrix of this form to be invertible,
+it turns out to suffice to ask that \(A\) is invertible.
+Indeed, doing block matrix multiplication we see that</p><p>\(\begin{pmatrix} A^{-1} & -A^{-1}\vec w \\ \vec 0 & 1\end{pmatrix}\begin{pmatrix} A & \vec w \\ \vec 0 & 1\end{pmatrix}
+=\begin{pmatrix} A^{-1}A & A^{-1}\vec w - A^{-1}\vec w \\ 0 & 1\end{pmatrix}
+= I\).</p><p>Anyway, to be a <i>rigid motion</i> of Euclidean space,
+we want <i>distances</i> to be preserved.
+Recall that the <i>distance</i> between vectors \(\vec v\) and \(\vec w\)
+is \(\|\vec v - \vec w\| = \sqrt{(\vec v - \vec w) \cdot (\vec v - \vec w)}\).
+Notice that for vectors on the affine plane \(z = 0\),
+the distance between vectors corresponds to the usual
+<i>Euclidean distance</i> between <i>points</i> on the plane.
+In other words \(d((\vec v, 1), (\vec w, 1)) = d(\vec v, \vec w)\),
+because the last coordinate becomes zero.</p><p>Doing a little matrix multiplication,
+we see that in \(n\) dimensions,
+the image of the vector \((\vec v, 1)\) under the matrix \(M\) above
+is \((A\vec v + \vec w, 1)\).
+Therefore the matrix \(M\) will preserve distances on the hyperplane \(x_{n+1} = 1\)
+<i>just when the matrix \(A\) satisfies \(A\vec v \cdot A \vec v = \vec v \cdot \vec v\).</i>
+In other words, the matrix \(A\)
+actually be one that preserves the $(n-1)$-sphere in \(\mathbb{R}^n\)!
+That’s pretty neat.</p><p>Actually, before I go on to talk about hyperbolic space,
+I want to point out a neat fact:
+Since \(AA^T = 1\), doing block-matrix multiplication, we see that</p><p>\(M\begin{pmatrix}I & 0 \\ 0 & 0 \end{pmatrix}M^T =
+\begin{pmatrix}A & \vec w \\ \vec 0 & 1\end{pmatrix}\begin{pmatrix}A^T & \vec 0\\ \vec 0 & 0
+\end{pmatrix} = \begin{pmatrix} I & \vec 0 \\ \vec 0 & 0 \end{pmatrix}\).</p><p>Actually, writing \(g\) for the matrix \(\begin{pmatrix}I & \vec 0 \\ \vec 0 & 0 \end{pmatrix}\),
+we see that a matrix \(M\) preserving the hyperplane \(x_{n+1} = 1\)
+is a rigid motion of Euclidean space if and only if it satisfies \(MgM^T = g\).</p></div></div><div id=outline-container-orgfa01115 class=outline-2><h2 id=orgfa01115><span class=section-number-2>3.</span> Hyperbolic space</h2><div class=outline-text-2 id=text-3><p>Okay, bear with me, this one is kind of weird but also very very cool.
+Earlier, when we stipulated that an \((n+1)\times(n+1)\) matrix \(M\)
+belonged to the symmetry group of \(S^n\) when it satisfied
+\(M^T I M = I\) or \(M I M^T = I\),
+<i>we actually may replace \(I\) with any \((n+1)\times(n+1)\) matrix we’d like.</i>
+We already did this a little right at the end of the previous section,
+where \(I\) was replaced with \(g\), the matrix whose first \(n\) diagonal entries are \(1\)
+and whose last entry is \(0\).
+Interestingly, when that last entry is \(1\),
+we had a space with “constant sectional curvature equal to \(1\)”,
+when we gave it the <i>round</i> metric.
+and when it was \(0\), we got a space with constant sectional curvature equal to \(0\).
+It’s extremely tempting to see what might happen if we let that last entry be \(-1\) instead!</p><p>So let \(g\) be the matrix
+\(\begin{pmatrix}I & \vec 0 \\ \vec 0 & -1 \end{pmatrix}\)
+and suppose \(M\) is a matrix satisfying \(M^TgM = g\).
+Notice that \(M\) preserves the (one-sheeted) <i>hyperboloid</i>
+comprising those points in \(\mathbb{R}^{n+1}\) satisfying
+\(x_1^2 + \cdots + x_n^2 - x_{n+1}^2 = 1\):
+these are just the vectors \(\vec x\) for which \(\vec x^T g \vec x = 1\).
+But actually it <i>also</i> preserves the <i>two-sheeted</i> hyperboloid
+\(x_{n+1}^2 - x_1^2 - \cdots - x_n^2 = 1\).
+One way to see this is to note that it is the set of vectors for which
+\(\vec x^T g \vec x = -1\),
+and if \(M^TgM = g\),
+then \(\vec x^T g \vec x = \vec x^T M^TgM \vec x\),
+so if the left hand equation is \(-1\), so is the right-hand equation.</p><p>One reason to prefer the two-sheeted hyperboloid is that it doesn’t have a “hole”,
+and another is that, like the sphere \(S^n\) and \(\mathbb{R}^n\)
+as the hyperplane \(x_{n+1} = 1\),
+the two-sheeted hyperboloid includes the point \((\vec 0, 1)\).</p><p>Since \(g\) is invertible, the equation \(M^T g M = g\) implies that \(M\) is invertible.
+The <i>group</i> of matrices satisfying \(M^TgM = g\)
+is kind of curious:
+an element of this group may swap the two sheets of the hyperboloid,
+or it may fix them.
+Let’s suppose it fixes them,
+so that \(\vec v_{n+1} > 0\) implies that \({(M\vec v)}_{n+1} > 0\).</p></div><div id=outline-container-orgf4349b6 class=outline-3><h3 id=orgf4349b6><span class=section-number-3>3.1.</span> A metric on hyperbolic space</h3><div class=outline-text-3 id=text-3-1><p>Just as we found the <i>round metric</i> on the $n$-sphere in \(\mathbb{R}^{n+1}\),
+it would be nice to have a formula for the distance between two points on the hyperboloid.
+It’s a little tough to know precisely what we’re asking for here,
+but one reasonable thing to ask would be for
+<i>linear</i> subspaces of \(\mathbb{R}^{n+1}\),
+when intersected with one of the sheets of the hyperboloid,
+to be <i>convex</i> in the hyperboloid,
+in the sense that the “shortest path” in this metric
+should stay within this linear subspace.
+In particular, if we set one of our points to be \((\vec 0, 1)\),
+the other point will lie on a <i>sub-hyperbola</i> of the hyperboloid.</p><figure><img src=/img/curvature/hyperbola.jpeg width=50%></figure><p>That is, let’s think in \(\mathbb{R}^2\).
+There are many ways to <i>parametrize</i> the hyperbola,
+but I’d like to argue that the best one
+is maybe the weirdest:
+\(t \mapsto (\sinh t, \cosh t)\).
+The functions \(\cosh\) and \(\sinh\)
+are pronounced “cosh” (like as in “oshkosh”)
+and “cinch” (like as in “it’ll be a cinch!” maybe more phonetically “sin-tch”).
+You maybe met them in a Calculus class once upon a time
+and they’re defined as</p><p>\(\cosh x = \frac{e^{x} + e^{-x}}{2}\) and \(\sinh x = \frac{e^{x} - e^{-x}}{2}\).</p><p>Let’s do a little math, shall we?
+First of all notice that \(e^{-x} = \frac{1}{e^x}\),
+so if we write \(a = e^x\), we can compute</p><p>\[\sinh^2 x - \cosh^2 x = \frac{{(a - \frac{1}{a})}^2}{4} - \frac{{(a + \frac{1}{a})}^2}{4}
+= \frac{a^2 - 2 + \frac{1}{a^2}}{4} - \frac{a^2 + 2 + \frac{1}{a^2}}{4} = -\frac{4}{4} = -1\].</p><p>Therefore this really is the parametrization of the upper sheet of the hyperboloid.</p><p>The reason I prefer this parametrization
+is that the <i>derivative</i> of \(\sinh t\) with respect to \(t\)
+is, one checks, \(\cosh t\) and vice versa.
+Thus the velocity vector of the curve \(t \mapsto (\sinh t, \cosh t)\)
+is \(\vec v = (\cosh t, \sinh t)\),
+which satisfies \(\vec v^T g \vec v = 1\).
+In other words,
+with respect to a funky way \(g\) of measuring “norms” of vectors,
+the vector \(\vec v\) is a <i>unit</i> vector.</p><p>This is significant, because it says that with respect to our funky norm,
+the curve \(t \mapsto (\sinh t, \cosh t)\)
+is <i>parametrized by arc length.</i>
+In other words, we can define a <i>distance</i>
+between points \((\sinh s, \cosh s)\) and \((\sinh t, \cosh t)\)
+on the hyperbola as \(|s - t|\)!</p><p>If we let \(s = 0\), notice that this quantity, \(|t|\),
+is related to the $y$-coordinate of the point \((p,q) = (\sinh t, \cosh t)\)
+whose distance to \((0,1)\) we are trying to measure.
+In fact,
+we have</p><p>\[\sinh s \sinh t - \cosh s \cosh t = -\frac{e^{s - t} + e^{t - s}}{2} = -\cosh (s - t),\]</p><p>so we can compute this distance based on knowing the vectors \(\vec v\) and \(\vec w\)
+as \(\operatorname{arccosh} (-\vec v^T g \vec w)\).</p><p>As it turns out, this metric on the hyperboloid
+turns it into a Riemannian manifold of dimension \(n\) and constant sectional curvature \(-1\).
+Since, as it turns out,
+the embedding of the hyperboloid into \(\mathbb{R}^{n+1}\)
+is <i>not</i> isometric,
+we can't compute this directly from the definition of the hyperboloid.
+This is maybe one situation where the curvature tensor actually turns out to be useful.</p><p>There's much more I'd like to say about hyperbolic space,
+but this post is long in the tooth as it is, so I'll sign off here for now.</p></div></div></div></div><footer>Find me on <a rel=me href=https://merveilles.town/@alanza>Mastodon</a>.</footer></body></html>

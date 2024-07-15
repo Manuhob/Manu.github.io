@@ -1,11 +1,52 @@
-<!doctype html><html lang=en-us><html><head><link rel=stylesheet href=https://ryleealanza.org/sass/main.fd4e9295ddc1db5ea95bf3cc4ecf03cc64c1017f474d9d29cf71bd2315e43931.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css integrity=sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js integrity=sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz crossorigin=anonymous></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script>
-<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></head><body><div class=maindiv id=content><header><div class=navdiv><div class=sidebar-l><div><div class=headline><a href=/>Rylee Alanza Lyman</a></div><div><nav><div class=navbutton><a href=/>Home</a></div><div class=navbutton><a href=/research/>Research</a></div><div class=navbutton><a href=/teaching/>Teaching</a></div><div class=navbutton><a href=/alanza/>Other</a></div><div class=navbutton><a href=/posts/>Blog</a></div></nav></div></div></div></div></header><p>In this post, I want to kind of bring together
+<!doctype html><html lang=en-us>
+  <html>
+    <head>
+      <link rel=stylesheet href=https://ryleealanza.org/sass/main.fd4e9295ddc1db5ea95bf3cc4ecf03cc64c1017f474d9d29cf71bd2315e43931.css>
+      <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css integrity=sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X crossorigin=anonymous>
+      <script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js integrity=sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz crossorigin=anonymous></script>
+      <script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+      <script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script>
+    </head>
+
+    <body>
+      <div class=maindiv id=content>
+        <header>
+          <div class=navdiv>
+            <div class=sidebar-l>
+              <div>
+                <div class=headline>
+                  <a href=/>Rylee Alanza Lyman</a>
+
+                </div>
+                <div>
+                  <nav>
+                    <div class=navbutton>
+                      <a href=/>Home</a>
+
+                    </div>
+                    <div class=navbutton>
+                      <a href=/research/>Research</a>
+
+                    </div>
+                    <div class=navbutton>
+                      <a href=/teaching/>Teaching</a>
+
+                    </div>
+                    <div class=navbutton>
+                      <a href=/alanza/>Other</a>
+
+                    </div>
+                    <div class=navbutton><a href=/posts/>Blog</a></div></nav></div></div></div></div></header>
+
+        <p>In this post, I want to kind of bring together
 the theme of curvature
 and the theme of affine or projective geometry.
 My goal is to introduce the <i>spaces of constant curvature</i>
 as subspaces of Euclidean space
-and explore their symmetries as groups of matrices.</p><div id=table-of-contents role=doc-toc><h2>Table of Contents</h2><div id=text-table-of-contents role=doc-toc><ul><li><a href=#org36196f5>1. The $n$-sphere in \(\mathbb{R}^{n+1}\)</a></li><li><a href=#orgd55e416>2. Euclidean space</a></li><li><a href=#orgfa01115>3. Hyperbolic space</a><ul><li><a href=#orgf4349b6>3.1. A metric on hyperbolic space</a></li></ul></li></ul></div></div><div id=outline-container-org36196f5 class=outline-2><h2 id=org36196f5><span class=section-number-2>1.</span> The $n$-sphere in \(\mathbb{R}^{n+1}\)</h2><div class=outline-text-2 id=text-1><p>Remember our equation for the unit circle?
+and explore their symmetries as groups of matrices.</p>
+
+
+        <div id=table-of-contents role=doc-toc><h2>Table of Contents</h2><div id=text-table-of-contents role=doc-toc><ul><li><a href=#org36196f5>1. The $n$-sphere in \(\mathbb{R}^{n+1}\)</a></li><li><a href=#orgd55e416>2. Euclidean space</a></li><li><a href=#orgfa01115>3. Hyperbolic space</a><ul><li><a href=#orgf4349b6>3.1. A metric on hyperbolic space</a></li></ul></li></ul></div></div><div id=outline-container-org36196f5 class=outline-2><h2 id=org36196f5><span class=section-number-2>1.</span> The $n$-sphere in \(\mathbb{R}^{n+1}\)</h2><div class=outline-text-2 id=text-1><p>Remember our equation for the unit circle?
 \(x^2 + y^2 = 1\)?
 This <i>curve</i> is a $1$-dimensional object living in \(\mathbb{R}^2\),
 affectionately known as \(\mathbb{R}^{1+1}\)
@@ -295,4 +336,19 @@ the embedding of the hyperboloid into \(\mathbb{R}^{n+1}\)
 is <i>not</i> isometric,
 we can't compute this directly from the definition of the hyperboloid.
 This is maybe one situation where the curvature tensor actually turns out to be useful.</p><p>There's much more I'd like to say about hyperbolic space,
-but this post is long in the tooth as it is, so I'll sign off here for now.</p></div></div></div></div><footer>Find me on <a rel=me href=https://merveilles.town/@alanza>Mastodon</a>.</footer></body></html>
+but this post is long in the tooth as it is, so I'll sign off here for now.</p>
+
+</div>
+
+</div>
+
+</div></div>
+
+<footer>Find me on <a rel=me href=https://merveilles.town/@alanza>Mastodon</a>.</footer>
+
+
+    </body>
+
+
+
+  </html>

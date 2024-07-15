@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Starting point of the blog
+layout: default
 ---
 
 In this blog I'll add some entries about my very personal journal while learning some Data Science stuff, starting with some fundamental notions of Statistics. 

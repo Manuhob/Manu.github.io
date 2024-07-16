@@ -1,12 +1,12 @@
 :root {
   --measure: 75ch;
-  --brightfg: #1B4242;
+  --brightfg: #B7526A;
   --brightbg: #F8F9BD;
-  --dullbg: #5C8374;
-  --darkbg: #607660;
-  --darkfg: #092635;
+  --dullbg: #E1CCEE;
+  --darkbg: #82859B;
+  --darkfg: #4F2C4D;
   --sans: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #1b2631 ;
+  color: #555;
   line-height: 1.5em;
   font-family: "Georgia", serif; }
 
@@ -23,7 +23,7 @@ footer {
   max-width: none; }
 
 .maindiv {
-  background-color: #9EC8B9;
+  background-color: #e0e0e0;
   box-sizing: content-box;
   margin: 0 auto;
   padding: 1.5rem calc(1.5ch * 1.5 * 1.5); }

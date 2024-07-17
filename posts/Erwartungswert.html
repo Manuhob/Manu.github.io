@@ -177,7 +177,7 @@ This is called a <a href="https://en.wikipedia.org/wiki/Binomial_distribution"><
 <h2 id="theoretic-description">Theoretic description</h2>
 <p>Here is a summary of the theoretic ingredients to compute the expected value of a random variable, comparing each step with the previous example.</p>
 <ol>
-<li><p><strong>Set of events</strong> $\Omega$. This is the set of possibilities of your random event.<br> <em>In the example, an event in $\Omega$ is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises $1)$, $2)$, $4)$ and guessing incorrectly the exercise $3)$.</em></p>
+<li><p><strong>Set of events</strong> $\Omega$. This is the set of possibilities of your random event. <em>In the example, an event in $\Omega$ is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises $1)$, $2)$, $4)$ and guessing incorrectly the exercise $3)$.</em></p>
 </li>
 <li><p>A <strong>random variable</strong> $X : \Omega \rightarrow \mathbb{R}$, which gives us a numeric value in a finite set $\{x_1,\cdots , x_r\}$, for each event in $\Omega$. It is called a random variable as it cannot be predicted.
  <em>In the example, the random variable $X$ is the score obtained for the corresponding choosing of random answers.</em></p>
@@ -188,13 +188,14 @@ This is called a <a href="https://en.wikipedia.org/wiki/Binomial_distribution"><
 <li><p>The <strong>expected value</strong> (sometimes called expectancy or expectation) of the random variable $X$, is computed with the previous ingredients as:</p>
   		$$  \mathbb{E}(X) = \sum_{j = 1}^n x_j p_j.     $$
 
-<<strong>In the example, the expected value is <span class="hljs-number">10.</span> </strong>
+<strong>In the example, the expected value is <span class="hljs-number">10.</span> </strong>
 </li>
 </ol>
 <h3 id="warning-">Warning!</h3>
 <p>The previous description applies only for a random variable with a finite amount of values. If the random variable takes a discrete but infinite amount of values, the sum becomes a series
-   $$ \mathbb{E}(X) = \sum_{j = 1}^\infty x_j P(X = x<em>j),$$<br>and if the random variable takes a continua of values (for example, if $X$ is the amount of glucose in an orange, or the amount of time necessary to run a mile), the expected value becomes an integral
-    $$ \mathbb{E}(X) = \int</em>\mathbb{R} x P(X = x) dx.$$</p>
+   $$ \mathbb{E}(X) = \sum_{j = 1}^\infty x_j P(X = x_j),$$
+     and if the random variable takes a continua of values (for example, if $X$ is the amount of glucose in an orange, or the amount of time necessary to run a mile), the expected value becomes an integral
+    $$ \mathbb{E}(X) = \int_\mathbb{R} x P(X = x) dx.$$</p>
 <h3 id="theorem-strong-law-of-large-numbers-">Theorem (Strong law of large numbers)</h3>
 <p>The <strong>strong law of large numbers</strong> (also called <a href="https://en.wikipedia.org/wiki/Andrey_Kolmogorov" title="Andrey Kolmogorov">Kolmogorov</a>&#39;s law) states that the sample average <a href="https://en.wikipedia.org/wiki/Almost_sure_convergence" title="Almost sure convergence">converges almost surely</a> to the expected value</p>
 <p>$$\overline{X}<em>n \rightarrow</em>{a.s.} \mathbb{E}(X), \quad \text{when} \quad n \rightarrow \infty.$$

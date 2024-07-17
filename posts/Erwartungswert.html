@@ -38,18 +38,181 @@
           </div>        
         </header>
 
-
-        <h1>Erwartungswert</h1> 
-
-         <h2>Abstract</h2>
-<p>In this note, we will discuss the concept of a random variable and its expected value. We will follow the format example \(\rightarrow\) intuition $\(\rightarrow\) theory. We finish with an historic example.</p>
-
-<h2>To answer a test at random</h2>
-
-<p>In a multiple option question with four options, and choosing the answer at random, we have
--  Probability to guess correctly: $P = 1/4$
--  Probability to guess incorrectly: $P = 3/4$. 
-
-In the next Figure, we chose option (c), but the correct answer was (a)</p>
+<h1 id="erwartungswert">Erwartungswert</h1>
+<h2 id="abstract">Abstract</h2>
+<p>In this note, we will discuss the concept of a random variable and its expected value. We will follow the format example $\rightarrow$ intuition $\rightarrow$ theory. We finish with an historic example.</p>
+<h2 id="to-answer-a-test-at-random">To answer a test at random</h2>
+<p>In a multiple option question with four options, and choosing the answer at random, we have</p>
+<ul>
+<li>Probability to guess correctly: $P = 1/4$</li>
+<li>Probability to guess incorrectly: $P = 3/4$. </li>
+</ul>
+<p>In the next Figure, we chose option (c), but the correct answer was (a)</p>
+<table>
+<thead>
+<tr>
+<th>(a)</th>
+<th>(b)</th>
+<th>(c)</th>
+<th>(d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+<p>In the presence of two questions with four multiple options, in order to guess exactly one question, we must</p>
+<ol>
+<li>Guess correctly the first and incorrectly the second: $P = (1/4) \times (3/4) = 0.1875$, </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Inciso</th>
+<th>(a)</th>
+<th>(b)</th>
+<th>(c)</th>
+<th>(d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.-</td>
+<td>o x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.-</td>
+<td></td>
+<td>o</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>or guess incorrectly the first and correctly the second: $P = (3/4) \times (1/4) = 0.1875$</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Inciso</th>
+<th>(a)</th>
+<th>(b)</th>
+<th>(c)</th>
+<th>(d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.-</td>
+<td>o</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.-</td>
+<td></td>
+<td>o x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>having the total probability $2 \times (1/4) \times (3/4) = 0.375$ of guessing correctly exactly one question.</p>
+<h3 id="example">Example</h3>
+<p>In a test with four questions of multiple option (four options each), and each correct exercise is worth 10 points, the probabilities of getting each score are:</p>
+<table>
+<thead>
+<tr>
+<th>Number of rightly guessed exercises</th>
+<th>Score</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>$(3/4)^4$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>$4 \times (1/4) \times (3/4)^3$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>$6 \times (1/4)^2 \times (3/4)^2$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30</td>
+<td>$4 \times (1/4)^3 \times (3/4)$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>40</td>
+<td>$(1/4)^4$</td>
+</tr>
+</tbody>
+</table>
+<p>To obtain the <strong>Expected Value</strong>, we multiply each score times the probability of obtaining such score and add everything together. In the previous example, the expected value is:
+$$  \mathbb{E} = 0 + 4.21875 + 4.21875 + 1.40625 + 0.15625 = 10.     $$</p>
+<h3 id="generalizating-the-example">Generalizating the example</h3>
+<p>In a more general case, where we have a test with n exercises. If we have a probability $p$ of guessing correctly each exercise ($p = 1/4$ in the previous example), then we have a probability $(1-p)$ of guessing incorrectly each exercise. If we want exactly $k$ correct exercises when guessing at random, we need</p>
+<ul>
+<li>Possible combinations of right-wrong guessings: ${n \choose k}$, </li>
+<li>Probability of ocurrence in each combination: $p^k (1-p)^{n-k}$ .
+So, the probability of guessing exactly $k$ exercises in an $n$-test scenario is ${n \choose k} p^k (1-p)^{n-k}$. The total probability is
+$$ \sum_{k=0}^n {n \choose k} p^k(1-p)^{n-k} = (p + 1-p)^n = 1^n = 1.$$
+This is called a <a href="https://en.wikipedia.org/wiki/Binomial_distribution"><strong>Binomial distribution</strong></a>.</li>
+</ul>
+<h2 id="theoretic-description">Theoretic description</h2>
+<p>Here is a summary of the theoretic ingredients to compute the expected value of a random variable, comparing each step with the previous example.</p>
+<ol>
+<li><p><strong>Set of events</strong> $\Omega$. This is the set of possibilities of your random event.<br> <em>In the example, an event in $\Omega$ is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises $1)$, $2)$, $4)$ and guessing incorrectly the exercise $3)$.</em></p>
+</li>
+<li><p>A <strong>random variable</strong> $X : \Omega \rightarrow \mathbb{R}$, which gives us a numeric value in a finite set ${x_1,\cdots , x_r}$, for each event in $\Omega$. It is called a random variable as it cannot be predicted.
+ <em>In the example, the random variable $X$ is the score obtained for the corresponding choosing of random answers.</em></p>
+</li>
+<li><p>A <strong>probability distribution</strong>, which for each value $x_j$, gives us the probability $0 \leq p_j = P(X = x_j) \leq 1$, of the random variable take the value $x<em>j$. It must satisfy the condition $\sum</em>{j = 1}^n p_j = 1$.
+ <em>In the example, the probability distribution is computed as the probability to obtain certain number of correct answers and follows the binomial distribution.</em></p>
+</li>
+<li><p>The <strong>expected value</strong> (sometimes called expectancy or expectation) of the random variable $X$, is computed with the previous ingredients as:</p>
+<pre><code> <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>  \mathbb{E}(X) = \sum_{j = <span class="hljs-number">1</span>}^n x_j p_j.     <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>
+ *In the example, the expected value is <span class="hljs-number">10.</span>*
+</code></pre></li>
+</ol>
+<h3 id="warning-">Warning!</h3>
+<p>The previous description applies only for a random variable with a finite amount of values. If the random variable takes a discrete but infinite amount of values, the sum becomes a series
+   $$ \mathbb{E}(X) = \sum_{j = 1}^\infty x_j P(X = x<em>j),$$<br>and if the random variable takes a continua of values (for example, if $X$ is the amount of glucose in an orange, or the amount of time necessary to run a mile), the expected value becomes an integral
+    $$ \mathbb{E}(X) = \int</em>\mathbb{R} x P(X = x) dx.$$</p>
+<h3 id="theorem-strong-law-of-large-numbers-">Theorem (Strong law of large numbers)</h3>
+<p>The <strong>strong law of large numbers</strong> (also called <a href="https://en.wikipedia.org/wiki/Andrey_Kolmogorov" title="Andrey Kolmogorov">Kolmogorov</a>&#39;s law) states that the sample average <a href="https://en.wikipedia.org/wiki/Almost_sure_convergence" title="Almost sure convergence">converges almost surely</a> to the expected value</p>
+<p>$$\overline{X}<em>n \rightarrow</em>{a.s.} \mathbb{E}(X), \quad \text{when} \quad n \rightarrow \infty.$$
+In other words, the law of large numbers, tells us that if we repeat an experiment plenty of times, then the average of the values of the random variable tends to the expected value $\mathbb{E}(X)$.</p>
+<p><em>The law of large numbers tells us that if a lot of students answer randomly the test with four multiple option questions as in the example, then the average obtained score would be close to $\mathbb{E}(X) = 10$. So, the most probable outcome for a student answering at random the test is to obtain a score of  $10/40 = 2.5$.</em></p>
+<h2 id="two-more-examples">Two more examples</h2>
+<h3 id="example-throwing-dice-at-random">Example: Throwing dice at random</h3>
+<p>When throwing a cubic six-side dice at random, we consider $X$, the random variable which gives us the amount of dots of the face &quot;looking up&quot;. So, the possible values for $X$ are ${1,2,3,4,5,6}$, and all of them have the same probability $1/6$. The expected value of the random variable is thus:
+    $$  \mathbb{E}(X) = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + 3 \times \frac{1}{6} + 4 \times \frac{1}{6} + 5 \times \frac{1}{6} + 6 \times \frac{1}{6} = 3.5 $$</p>
+<h3 id="example-an-historic-problem">Example: An historic problem</h3>
+<p>Two players are betting their belongings in a game of &quot;coin tossing&quot;, so that the first player who wins $4$ games takes all. The first player has won $2$ games and the second has won only $1$, but the encounter is interrupted by the police and they cannot continue. They decide to divide the belongings, but <strong>what is the fair distribution for this scenario?</strong> Using the expected value to compute the possibilities for the winning of one or the other player, it can be concluded that the fair distribution is that $68.75 \%$ of the belongings go to the first player.</p>
+<h3 id="an-historic-note">An historic note</h3>
+<p>The last example is known as the problem of division of stakes (also called <a href="https://en.wikipedia.org/wiki/Problem_of_points">problem of points</a>) and it was thought for many years to be unsolvable. The solution to this problem by Blaise Pascal and Pierre de Fermat originated the concept of expected value and boosted the advance in probability and statistics.</p>
+<h2 id="bibliograf-a">Bibliografía</h2>
+<ol>
+<li><p><strong>[Ra]</strong> <em>R E. Walpole,  R H Myers y S L Myers</em>, <em>Probabilidad y estadística para ingenieros</em>, 6a. ed. PRENTICE-HALL HISPANOAMERICA, S.A. México, 1999</p>
+</li>
+<li><p><strong>[Poin]</strong> <a href="\url{https://probabilityandstats.wordpress.com/2016/11/06/the-problem-of-points/">The problem of points</a></p>
+</li>
+</ol>
 
 </body></html>

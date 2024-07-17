@@ -179,16 +179,17 @@ This is called a <a href="https://en.wikipedia.org/wiki/Binomial_distribution"><
 <ol>
 <li><p><strong>Set of events</strong> $\Omega$. This is the set of possibilities of your random event.<br> <em>In the example, an event in $\Omega$ is making exactly one election of answers in each question. An event of this style would be to guess correctly the exercises $1)$, $2)$, $4)$ and guessing incorrectly the exercise $3)$.</em></p>
 </li>
-<li><p>A <strong>random variable</strong> $X : \Omega \rightarrow \mathbb{R}$, which gives us a numeric value in a finite set ${x_1,\cdots , x_r}$, for each event in $\Omega$. It is called a random variable as it cannot be predicted.
+<li><p>A <strong>random variable</strong> $X : \Omega \rightarrow \mathbb{R}$, which gives us a numeric value in a finite set $\{x_1,\cdots , x_r\}$, for each event in $\Omega$. It is called a random variable as it cannot be predicted.
  <em>In the example, the random variable $X$ is the score obtained for the corresponding choosing of random answers.</em></p>
 </li>
-<li><p>A <strong>probability distribution</strong>, which for each value $x_j$, gives us the probability $0 \leq p_j = P(X = x_j) \leq 1$, of the random variable take the value $x<em>j$. It must satisfy the condition $\sum</em>{j = 1}^n p_j = 1$.
+<li><p>A <strong>probability distribution</strong>, which for each value $x_j$, gives us the probability $0 \leq p_j = P(X = x_j) \leq 1$, of the random variable take the value $x_j$. It must satisfy the condition $\sum_{j = 1}^n p_j = 1$.
  <em>In the example, the probability distribution is computed as the probability to obtain certain number of correct answers and follows the binomial distribution.</em></p>
 </li>
 <li><p>The <strong>expected value</strong> (sometimes called expectancy or expectation) of the random variable $X$, is computed with the previous ingredients as:</p>
-<pre><code> <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>  \mathbb{E}(X) = \sum_{j = <span class="hljs-number">1</span>}^n x_j p_j.     <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>
- *In the example, the expected value is <span class="hljs-number">10.</span>*
-</code></pre></li>
+  		$$  \mathbb{E}(X) = \sum_{j = 1}^n x_j p_j.     $$
+
+<<strong>In the example, the expected value is <span class="hljs-number">10.</span> </strong>
+</li>
 </ol>
 <h3 id="warning-">Warning!</h3>
 <p>The previous description applies only for a random variable with a finite amount of values. If the random variable takes a discrete but infinite amount of values, the sum becomes a series

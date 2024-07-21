@@ -1,0 +1,3 @@
+- change navigation highlight
+- Delete Title in blog section
+- Add /temp to .gitignore 

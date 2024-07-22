@@ -40,9 +40,50 @@
 
 
   <h1>Some important probability distributions</h1>
-<p>Binomial <span class="math inline">${n \choose x} p^x(1-p)^{n-x}$</span> And then, there is the Bernoulli distribution
-    <img src=/imgs/Bernoulli.gif alt="Bernoulli distribution" style="width:80%">
+<p>Binomial <span class="math inline">${n \choose x} p^x(1-p)^{n-x}$</span> By adding the code
 </p>
+  <blockquote cite=""> <pre><code>
+import scipy.special as sci
+import matplotlib.pyplot as plt 
+import matplotlib.animation as animation
+
+
+n = int(input('Number of data points: '))
+p = 1/100
+
+
+#Bernoulli distribution
+def Bernoulli(n,p,k):
+    return sci.comb(n,k)*p**k*(1-p)**(n-k)
+
+data = [Bernoulli(n,p,k) for k in range(n)]
+
+#Create the plotting object with initial data
+fig, ax = plt.subplots()
+ber, = ax.plot(data)
+ax.set_title('Bernoulli(p) while varying p')
+
+#Update image with new data
+def update(l):
+    data = [Bernoulli(n,p*l,k) for k in range(n)]
+    ber.set_ydata(data)
+    return ber
+
+#create animation
+ani = animation.FuncAnimation(fig=fig, func=update, frames = 100, interval = 40)
+
+
+f = r"/home/manu/Bernoulli.gif"
+writergif = animation.PillowWriter(fps=30) 
+ani.save(f, writer=writergif)
+plt.show()
+                 </code></pre>
+               </blockquote>
+
+  <figure>
+  <img src=/imgs/Bernoulli.gif alt="Bernoulli distribution" style="width:100%" >
+  <figcaption>Bernoulli distribution, varying probability parameter p</figcaption>
+</figure>    
 <p><span class="smallcaps">L. Wasserman</span>, <em>All of Statistics: A concise course in Statistical Inference</em>.</p>
       </div>
 

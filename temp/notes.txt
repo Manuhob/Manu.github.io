@@ -1,3 +1,9 @@
 - change navigation highlight
 - Delete Title in blog section
 - Add /temp to .gitignore 
+
+- Understand normal distributions, central limit theorem, and a little bit of inferential statistics via the notes "stats-210-Statistical-Theory"
+
+
+Check: "George Casella, Roger L. Berger - Statistical Inference-Duxbury Press (2001)"
+Lots of examples to understand the theory
